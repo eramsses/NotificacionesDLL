@@ -86,20 +86,22 @@ namespace DemoNotificaciones
 
         private void BtnPersonalizado_Click(object sender, EventArgs e)
         {
-            //Notificacion.CUSTOM_OPACIDAD = 0.9;
-            //Notificacion.CUSTOM_COLOR_FONDO = Color.FromArgb(255, 180, 80);
-            //Notificacion.CUSTOM = Properties.Resources.icons8_close_window_64px_2;
-            //Notificacion.CUSTOM_COLOR_TEXT = Color.FromArgb(255, 120, 0);
-            //Notificacion.CUSTOM_FONT_TITULO = new Font(base.Font.FontFamily, 8F, FontStyle.Bold);
-            //Notificacion.CUSTOM_FONT_MENSAJE = new Font(base.Font.FontFamily, 8F, FontStyle.Regular);//new Font("Century Gothic", 13.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+
+            Notificacion.CUSTOM_OPACIDAD = 0.9;
+            Notificacion.CUSTOM_COLOR_FONDO = Color.FromArgb(255, 180, 80);
+            Notificacion.CUSTOM_ICON = Properties.Resources.icons8_close_window_64px_2;
+            Notificacion.CUSTOM_COLOR_TEXT = Color.FromArgb(255, 120, 0);
+            Notificacion.CUSTOM_FONT_TITULO = new Font(base.Font.FontFamily, 8F, FontStyle.Bold);
+            Notificacion.CUSTOM_FONT_MENSAJE = new Font(base.Font.FontFamily, 8F, FontStyle.Regular);//new Font("Century Gothic", 13.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+
 
             if (chkIncluirTitulo.Checked)
             {
-                Notificacion.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Notificacion.CUSTOM, false);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Notificacion.CUSTOM_ICON, false);
             }
             else
             {
-                Notificacion.Mostrar(txtContenidoMensaje.Text, "", Notificacion.CUSTOM, false);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, "", Notificacion.CUSTOM_ICON, false);
             }
         }
     }

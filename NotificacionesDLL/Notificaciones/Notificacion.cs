@@ -39,7 +39,7 @@ namespace Notificaciones
         /// <summary>
         /// Icono personalizable.
         /// </summary>
-        public static System.Drawing.Image CUSTOM { get; set; } = Properties.Resources.icons8_info_64px;
+        public static System.Drawing.Image CUSTOM_ICON { get; set; } = Properties.Resources.icons8_info_64px;
 
         // Colores de fondo
         public static System.Drawing.Color COLOR_OK { get; set; } = System.Drawing.Color.FromArgb(0,146,14);
@@ -107,7 +107,7 @@ namespace Notificaciones
         /// </summary>
         /// <param name="mensaje">Contenido del mensaje a mostrar.</param>
         /// <param name="titulo">Título del mensaje.</param>
-        /// <param name="tipo">Tipo de icono que se va a mostrar, existen Mostrar.ICON_OK, Mostrar.ICON_WARNING, Mostrar.ICON_ERROR, Mostrar.ICON_INFO, Mostrar.CUSTOM </param>
+        /// <param name="tipo">Tipo de icono que se va a mostrar, existen Mostrar.ICON_OK, Mostrar.ICON_WARNING, Mostrar.ICON_ERROR, Mostrar.ICON_INFO, Mostrar.CUSTOM_ICON </param>
         /// <param name="autoCerrar">Controla si se va a cerrar automáticamente o no, true se cierra automáticamente, false permanese hasta que el usuario la cierra.</param>
         public static void Mostrar(string mensaje, string titulo, System.Drawing.Image tipo, bool autoCerrar)
         {
@@ -165,7 +165,7 @@ namespace Notificaciones
                 colorTexto = CUSTOM_COLOR_TEXT;
                 FontTitulo = CUSTOM_FONT_TITULO;
                 FontMensaje = CUSTOM_FONT_MENSAJE;
-                return CUSTOM;
+                return CUSTOM_ICON;
             }
             else
             {
@@ -214,7 +214,7 @@ namespace Notificaciones
                 FontMensaje = FONT_MENSAJE;
                 return COLOR_INFO;
             }
-            else if (tipo == CUSTOM)
+            else if (tipo == CUSTOM_ICON)
             {
                 opacidad = CUSTOM_OPACIDAD;
                 colorTexto = CUSTOM_COLOR_TEXT;
