@@ -120,7 +120,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmNotificaciones";
-            this.Opacity = 0.95D;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FrmNotificaciones";

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+//using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +23,10 @@ namespace Notificaciones
         private string titulo = "";
         private string mensaje = "";
         private bool autoCerrado = true;
-        private Color colorTexto = Color.FromArgb(240, 240, 240);
+        private System.Drawing.Color colorTexto = System.Drawing.Color.FromArgb(240, 240, 240);
+        private double opacidad = 0.95;
+        private System.Drawing.Font fontTitulo;
+        private System.Drawing.Font fontMensaje;
         #endregion
 
         #region Contructores
@@ -32,12 +35,15 @@ namespace Notificaciones
         /// </summary>
         /// <param name="notificacion">Número de notificación activa</param>
         /// <param name="mensaje">Texto que se muestra en el contenido del mensaje</param>
-        public FrmNotificaciones(int notificacion, string mensaje)
+        public FrmNotificaciones(int notificacion, string mensaje, double opacidad, System.Drawing.Font fontTitulo, System.Drawing.Font fontMensaje)
         {
             InitializeComponent();
             numeroNotificacion = notificacion;
             this.mensaje = mensaje;
             pgrsBarCerrar.Maximum = tiempoVisible;
+            this.opacidad = opacidad;
+            this.fontTitulo = fontTitulo;
+            this.fontMensaje = fontMensaje;
         }
 
         /// <summary>
@@ -46,13 +52,16 @@ namespace Notificaciones
         /// <param name="notificacion">Número de notificación activa</param>
         /// <param name="mensaje">Texto que se muestra en el contenido del mensaje</param>
         /// <param name="titulo">Texto que se muestra en el título del mensaje</param>
-        public FrmNotificaciones(int notificacion, string mensaje, string titulo)
+        public FrmNotificaciones(int notificacion, string mensaje, string titulo, double opacidad, System.Drawing.Font fontTitulo, System.Drawing.Font fontMensaje)
         {
             InitializeComponent();
             numeroNotificacion = notificacion;
             this.titulo = titulo;
             this.mensaje = mensaje;
             pgrsBarCerrar.Maximum = tiempoVisible;
+            this.opacidad = opacidad;
+            this.fontTitulo = fontTitulo;
+            this.fontMensaje = fontMensaje;
         }
         
         /// <summary>
@@ -63,7 +72,7 @@ namespace Notificaciones
         /// <param name="titulo">Texto que se muestra en el título del mensaje</param>
         /// <param name="icono">Imagen PGN al lado izquierdo del mensaje</param>
         /// <param name="color" type="Color">Color de fondo del mensaje</param>
-        public FrmNotificaciones(int notificacion, string mensaje, string titulo, Image icono, Color color, Color colorTexto)
+        public FrmNotificaciones(int notificacion, string mensaje, string titulo, System.Drawing.Image icono, System.Drawing.Color color, System.Drawing.Color colorTexto, double opacidad, System.Drawing.Font fontTitulo, System.Drawing.Font fontMensaje)
         {
             InitializeComponent();
             numeroNotificacion = notificacion;
@@ -73,6 +82,10 @@ namespace Notificaciones
             pgrsBarCerrar.Maximum = tiempoVisible;
             BackColor = color;
             this.colorTexto = colorTexto;
+            this.opacidad = opacidad;
+            this.fontTitulo = fontTitulo;
+            this.fontMensaje = fontMensaje;
+
         }
 
         /// <summary>
@@ -84,7 +97,7 @@ namespace Notificaciones
         /// <param name="icono">Imagen PGN al lado izquierdo del mensaje</param>
         /// <param name="color" type="Color">Color de fondo del mensaje</param>
         /// <param name="autoCerrado" type="Color">Color de fondo del mensaje</param>
-        public FrmNotificaciones(int notificacion, string mensaje, string titulo, Image icono, Color color, Color colorTexto, bool autoCerrado)
+        public FrmNotificaciones(int notificacion, string mensaje, string titulo, System.Drawing.Image icono, System.Drawing.Color color, System.Drawing.Color colorTexto, bool autoCerrado, double opacidad, System.Drawing.Font fontTitulo, System.Drawing.Font fontMensaje)
         {
             InitializeComponent();
             numeroNotificacion = notificacion;
@@ -95,6 +108,9 @@ namespace Notificaciones
             pgrsBarCerrar.Maximum = tiempoVisible;
             BackColor = color;
             this.colorTexto = colorTexto;
+            this.opacidad = opacidad;
+            this.fontTitulo = fontTitulo;
+            this.fontMensaje = fontMensaje;
         }
         
         #endregion
@@ -128,14 +144,14 @@ namespace Notificaciones
             if (ubicacionY < nuevaY)
             {
                 //Animacion para reacomodar las notificaciones a medida que se van cerrando
-                Location = new Point(ubicacionX, ubicacionY + 3);
+                Location = new System.Drawing.Point(ubicacionX, ubicacionY + 3);
 
             }
             else if (ubicacionY > nuevaY)
             {
 
                 //Animacion para reacomodar las notificaciones a medida que se van abriendo
-                Location = new Point(ubicacionX, ubicacionY - 3);
+                Location = new System.Drawing.Point(ubicacionX, ubicacionY - 3);
             }
 
             
@@ -154,12 +170,12 @@ namespace Notificaciones
         {
             int p = 9;
 
-            if (Mensajes.ListaNotificaciones.Contains(numero))
+            if (Notificacion.ListaNotificaciones.Contains(numero))
             {
 
-                for (int i = 0; i < Mensajes.ListaNotificaciones.Count; i++)
+                for (int i = 0; i < Notificacion.ListaNotificaciones.Count; i++)
                 {
-                    if (Mensajes.ListaNotificaciones[i] == numero)
+                    if (Notificacion.ListaNotificaciones[i] == numero)
                     {
                         p = i + 1;
                         break;
@@ -173,11 +189,11 @@ namespace Notificaciones
         private int ObtenerPosicionLista(int numero)
         {
             int p = 9;
-            if (Mensajes.ListaNotificaciones.Contains(numero))
+            if (Notificacion.ListaNotificaciones.Contains(numero))
             {
-                for (int i = 0; i < Mensajes.ListaNotificaciones.Count; i++)
+                for (int i = 0; i < Notificacion.ListaNotificaciones.Count; i++)
                 {
-                    if (Mensajes.ListaNotificaciones[i] == numero)
+                    if (Notificacion.ListaNotificaciones[i] == numero)
                     {
                         p = i;
                         break;
@@ -193,14 +209,14 @@ namespace Notificaciones
             if (!cerrado)
             {
                 i = 0;
-                Opacity = 0.95;
+                Opacity = opacidad;
                 timer1.Stop();
             }
         }
 
         private void CerrarMensaje()
         {
-            Mensajes.ListaNotificaciones.Remove(numeroNotificacion);
+            Notificacion.ListaNotificaciones.Remove(numeroNotificacion);
             Close();
         }
         #endregion
@@ -214,13 +230,19 @@ namespace Notificaciones
             txtMensaje.Text = mensaje;
             txtTitulo.ForeColor = colorTexto;
             txtMensaje.ForeColor = colorTexto;
-            Mensajes.NotificacionesActivas += 1;
-            Mensajes.ListaNotificaciones.Add(numeroNotificacion);
+            txtTitulo.Font = fontTitulo;
+            txtMensaje.Font = fontMensaje;
+            Notificacion.NotificacionesActivas += 1;
+            Notificacion.ListaNotificaciones.Add(numeroNotificacion);
+
+            Opacity = opacidad;
             
             int nuevaY = ObtenerPosicion(numeroNotificacion);
 
+            
+
             //Ubica la ventana del mensaje tomando en cuenta las dimensiones de la pantalla
-            Location = new Point(ancho - Width, nuevaY + Height);
+            Location = new System.Drawing.Point(ancho - Width, nuevaY + Height);
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)

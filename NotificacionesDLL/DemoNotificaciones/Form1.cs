@@ -17,18 +17,19 @@ namespace DemoNotificaciones
         public Form1()
         {
             InitializeComponent();
-            
+            Notificacion.FONT_TITULO = new Font(base.Font.FontFamily, 12.25F, FontStyle.Bold);
+            Notificacion.FONT_MENSAJE = new Font(base.Font.FontFamily, 12.25F, FontStyle.Italic);
         }
 
         private void BtnMostrarMensajeOK_Click(object sender, EventArgs e)
         {
             if (chkIncluirTitulo.Checked)
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Mensajes.ICON_OK);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Notificacion.ICON_OK);
             }
             else
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, "", Mensajes.ICON_OK);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, "", Notificacion.ICON_OK);
             }
 
         }
@@ -37,11 +38,11 @@ namespace DemoNotificaciones
         {
             if (chkIncluirTitulo.Checked)
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Mensajes.ICON_WARNING);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Notificacion.ICON_WARNING);
             }
             else
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, "", Mensajes.ICON_WARNING);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, "", Notificacion.ICON_WARNING);
             }
         }
 
@@ -49,11 +50,11 @@ namespace DemoNotificaciones
         {
             if (chkIncluirTitulo.Checked)
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Mensajes.ICON_ERROR);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Notificacion.ICON_ERROR);
             }
             else
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, "", Mensajes.ICON_ERROR);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, "", Notificacion.ICON_ERROR);
             }
         }
 
@@ -63,11 +64,11 @@ namespace DemoNotificaciones
             //Mensajes.ICON_INFO = icono;
             if (chkIncluirTitulo.Checked)
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Mensajes.ICON_INFO);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Notificacion.ICON_INFO);
             }
             else
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, "",Mensajes.ICON_INFO);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, "", Notificacion.ICON_INFO);
             }
         }
 
@@ -75,26 +76,30 @@ namespace DemoNotificaciones
         {
             if (chkIncluirTitulo.Checked)
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, 6);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, 6);
             }
             else
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, "", 6);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, "", 6);
             }
         }
 
         private void BtnPersonalizado_Click(object sender, EventArgs e)
         {
-            Mensajes.COLOR_CUSTOM = Color.FromArgb(255, 180, 80);
-            Mensajes.ICON_CUSTOM = Properties.Resources.icons8_close_window_64px_2;
-            Mensajes.COLOR_TEXT_CUSTOM = Color.FromArgb(255, 120, 0);
+            Notificacion.CUSTOM_OPACIDAD = 0.9;
+            Notificacion.CUSTOM_COLOR_FONDO = Color.FromArgb(255, 180, 80);
+            Notificacion.CUSTOM = Properties.Resources.icons8_close_window_64px_2;
+            Notificacion.CUSTOM_COLOR_TEXT = Color.FromArgb(255, 120, 0);
+            Notificacion.CUSTOM_FONT_TITULO = new Font(base.Font.FontFamily, 8F, FontStyle.Bold);
+            Notificacion.CUSTOM_FONT_MENSAJE = new Font(base.Font.FontFamily, 8F, FontStyle.Regular);//new Font("Century Gothic", 13.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+
             if (chkIncluirTitulo.Checked)
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Mensajes.ICON_CUSTOM, false);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, txtContenidoTitulo.Text, Notificacion.CUSTOM, false);
             }
             else
             {
-                Mensajes.Mostrar(txtContenidoMensaje.Text, "", Mensajes.ICON_CUSTOM, false);
+                Notificacion.Mostrar(txtContenidoMensaje.Text, "", Notificacion.CUSTOM, false);
             }
         }
     }

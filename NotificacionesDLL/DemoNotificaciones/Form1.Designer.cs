@@ -43,10 +43,10 @@
             // 
             // btnMostrarMensajeOK
             // 
-            this.btnMostrarMensajeOK.Location = new System.Drawing.Point(109, 202);
+            this.btnMostrarMensajeOK.Location = new System.Drawing.Point(109, 192);
             this.btnMostrarMensajeOK.Margin = new System.Windows.Forms.Padding(5);
             this.btnMostrarMensajeOK.Name = "btnMostrarMensajeOK";
-            this.btnMostrarMensajeOK.Size = new System.Drawing.Size(209, 37);
+            this.btnMostrarMensajeOK.Size = new System.Drawing.Size(209, 35);
             this.btnMostrarMensajeOK.TabIndex = 0;
             this.btnMostrarMensajeOK.Text = "Mensaje OK";
             this.btnMostrarMensajeOK.UseVisualStyleBackColor = true;
@@ -54,9 +54,9 @@
             // 
             // btnWarning
             // 
-            this.btnWarning.Location = new System.Drawing.Point(109, 247);
+            this.btnWarning.Location = new System.Drawing.Point(109, 235);
             this.btnWarning.Name = "btnWarning";
-            this.btnWarning.Size = new System.Drawing.Size(209, 32);
+            this.btnWarning.Size = new System.Drawing.Size(209, 30);
             this.btnWarning.TabIndex = 1;
             this.btnWarning.Text = "Mensaje Warning";
             this.btnWarning.UseVisualStyleBackColor = true;
@@ -64,18 +64,18 @@
             // 
             // txtContenidoTitulo
             // 
-            this.txtContenidoTitulo.Location = new System.Drawing.Point(109, 12);
+            this.txtContenidoTitulo.Location = new System.Drawing.Point(109, 11);
             this.txtContenidoTitulo.Name = "txtContenidoTitulo";
-            this.txtContenidoTitulo.Size = new System.Drawing.Size(381, 27);
+            this.txtContenidoTitulo.Size = new System.Drawing.Size(381, 26);
             this.txtContenidoTitulo.TabIndex = 2;
             this.txtContenidoTitulo.Text = "Título del mensaje";
             // 
             // txtContenidoMensaje
             // 
-            this.txtContenidoMensaje.Location = new System.Drawing.Point(109, 62);
+            this.txtContenidoMensaje.Location = new System.Drawing.Point(109, 59);
             this.txtContenidoMensaje.Multiline = true;
             this.txtContenidoMensaje.Name = "txtContenidoMensaje";
-            this.txtContenidoMensaje.Size = new System.Drawing.Size(381, 132);
+            this.txtContenidoMensaje.Size = new System.Drawing.Size(381, 126);
             this.txtContenidoMensaje.TabIndex = 3;
             this.txtContenidoMensaje.Text = "Lorem ipsum dolor sit amet consectetur adipiscing elit duis neque, rhoncus habita" +
     "sse volutpat phasellus penatibus pharetra.";
@@ -83,36 +83,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 15);
+            this.label1.Location = new System.Drawing.Point(34, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 21);
+            this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Título";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 62);
+            this.label2.Location = new System.Drawing.Point(28, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 21);
+            this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Mensaje";
             // 
             // chkIncluirTitulo
             // 
             this.chkIncluirTitulo.AutoSize = true;
-            this.chkIncluirTitulo.Location = new System.Drawing.Point(499, 14);
+            this.chkIncluirTitulo.Location = new System.Drawing.Point(499, 13);
             this.chkIncluirTitulo.Name = "chkIncluirTitulo";
-            this.chkIncluirTitulo.Size = new System.Drawing.Size(119, 25);
+            this.chkIncluirTitulo.Size = new System.Drawing.Size(127, 24);
             this.chkIncluirTitulo.TabIndex = 6;
             this.chkIncluirTitulo.Text = "Incluir título";
             this.chkIncluirTitulo.UseVisualStyleBackColor = true;
             // 
             // btnMensajeError
             // 
-            this.btnMensajeError.Location = new System.Drawing.Point(109, 285);
+            this.btnMensajeError.Location = new System.Drawing.Point(109, 271);
             this.btnMensajeError.Name = "btnMensajeError";
-            this.btnMensajeError.Size = new System.Drawing.Size(209, 32);
+            this.btnMensajeError.Size = new System.Drawing.Size(209, 30);
             this.btnMensajeError.TabIndex = 7;
             this.btnMensajeError.Text = "Mensaje Error";
             this.btnMensajeError.UseVisualStyleBackColor = true;
@@ -120,9 +120,9 @@
             // 
             // btnMensajeInformacion
             // 
-            this.btnMensajeInformacion.Location = new System.Drawing.Point(109, 323);
+            this.btnMensajeInformacion.Location = new System.Drawing.Point(109, 308);
             this.btnMensajeInformacion.Name = "btnMensajeInformacion";
-            this.btnMensajeInformacion.Size = new System.Drawing.Size(209, 32);
+            this.btnMensajeInformacion.Size = new System.Drawing.Size(209, 30);
             this.btnMensajeInformacion.TabIndex = 8;
             this.btnMensajeInformacion.Text = "Mensaje Información";
             this.btnMensajeInformacion.UseVisualStyleBackColor = true;
@@ -130,9 +130,9 @@
             // 
             // btnMensajeDefaul
             // 
-            this.btnMensajeDefaul.Location = new System.Drawing.Point(109, 361);
+            this.btnMensajeDefaul.Location = new System.Drawing.Point(109, 344);
             this.btnMensajeDefaul.Name = "btnMensajeDefaul";
-            this.btnMensajeDefaul.Size = new System.Drawing.Size(209, 32);
+            this.btnMensajeDefaul.Size = new System.Drawing.Size(209, 30);
             this.btnMensajeDefaul.TabIndex = 9;
             this.btnMensajeDefaul.Text = "Mensaje Default";
             this.btnMensajeDefaul.UseVisualStyleBackColor = true;
@@ -140,10 +140,10 @@
             // 
             // btnPersonalizado
             // 
-            this.btnPersonalizado.Location = new System.Drawing.Point(363, 202);
+            this.btnPersonalizado.Location = new System.Drawing.Point(363, 192);
             this.btnPersonalizado.Margin = new System.Windows.Forms.Padding(5);
             this.btnPersonalizado.Name = "btnPersonalizado";
-            this.btnPersonalizado.Size = new System.Drawing.Size(209, 37);
+            this.btnPersonalizado.Size = new System.Drawing.Size(209, 35);
             this.btnPersonalizado.TabIndex = 10;
             this.btnPersonalizado.Text = "Mensaje Personalizado";
             this.btnPersonalizado.UseVisualStyleBackColor = true;
@@ -151,9 +151,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 431);
+            this.ClientSize = new System.Drawing.Size(802, 410);
             this.Controls.Add(this.btnPersonalizado);
             this.Controls.Add(this.btnMensajeDefaul);
             this.Controls.Add(this.btnMensajeInformacion);
@@ -165,7 +165,7 @@
             this.Controls.Add(this.txtContenidoTitulo);
             this.Controls.Add(this.btnWarning);
             this.Controls.Add(this.btnMostrarMensajeOK);
-            this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
             this.Text = "Form1";
